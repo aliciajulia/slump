@@ -1,15 +1,19 @@
 <?php
 if ($_GET["antal"] > 10) {
     echo "skriv ett tal under 10";
-} else {
+} 
+else {
     $inmatning = $_GET;
     $lista = array("Anna", "Pelle", "Johan", "Anton", "Hanna", "Gabriel", "Rut", "Isak", "Kalle", "Fredrik");
     var_dump($lista);
-    for($i=0; $i<=$_GET["antal"]; $i++) {
-        $slump = new Math();
-        $slump = Math.random(10);
-        echo $slump;
+    for ($i = 0; $i < $_GET["antal"]; $i++) {
+        $slump = rand(0, 9);
+//        echo $slump;
+        $nummer = array();
+        array_push($nummer, $slump);
     }
+//    var_dump($nummer);
+    
 }
 //var_dump($_GET);
 //
