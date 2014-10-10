@@ -1,22 +1,35 @@
 <?php
 if ($_GET["antal"] > 10) {
     echo "skriv ett tal under 10";
-} 
-else {
+} else {
     $inmatning = $_GET;
     $lista = array("Anna", "Pelle", "Johan", "Anton", "Hanna", "Gabriel", "Rut", "Isak", "Kalle", "Fredrik");
-    var_dump($lista);
-    for ($i = 0; $i < $_GET["antal"]; $i++) {
-        $slump = rand(0, 9);
-//        echo $slump;
+
+    //Slumpa så många nummer som den skrev in
+    //Läs de slumpade nummren som platser i namnarrayen
+    function slumpa($funklista, $antal) {
+
         $nummer = array();
-        array_push($nummer, $slump);
+        for ($i = 0; $i < $antal; $i++) {
+            $slump = rand(0, sizeof($funklista) - 1);
+//            echo $funklista[$slump];
+
+            array_splice($funklista, $slump, 1);
+            array_push($nummer, $funklista[$slump]);
+        }
+        return $nummer;
     }
-//    var_dump($nummer);
-    
+
+    function skrivut($svar) {
+        foreach ($svar as $name) {
+            echo $namn;
+        }
+    }
+
+    slumpa($lista, $_GET["antal"]);
+    echo {$slumpa};
+    skrivut($svar);
 }
-//var_dump($_GET);
-//
 ?>
 
 
