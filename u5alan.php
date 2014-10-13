@@ -13,22 +13,20 @@ if ($_GET["antal"] > 10) {
         for ($i = 0; $i < $antal; $i++) {
             $slump = rand(0, sizeof($funklista) - 1);
 //            echo $funklista[$slump];
-
-            array_splice($funklista, $slump, 1);
             array_push($nummer, $funklista[$slump]);
+            array_splice($funklista, $slump, 1);
         }
         return $nummer;
     }
 
     function skrivut($svar) {
         foreach ($svar as $name) {
-            echo $namn;
+            echo $name."<br>";
         }
     }
 
-    slumpa($lista, $_GET["antal"]);
-    echo {$slumpa};
-    skrivut($svar);
+    $taemot = slumpa($lista, $_GET["antal"]);
+    skrivut($taemot);
 }
 ?>
 
